@@ -1,0 +1,26 @@
+{
+    "name": "dearon/Slim-Mustache",
+    "type": "library",
+    "description": "Mustache View Parser package for the Slim Framework",
+    "keywords": ["templating", "extensions", "slimphp", "mustache"],
+    "homepage": "http://github.com/dearon/Slim-Mustache",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Remco Meeuwissen",
+            "email": "dearon@gmail.com",
+            "homepage": "http://www.dearon.com/"
+        }
+    ],
+    "require": {
+        "slim/slim": ">=2.4.0",
+        "php": ">=5.3.0",
+        "mustache/mustache": ">=2.5.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "Slim\\Mustache": ""
+        }
+    },
+    "target-dir": "Slim/Mustache"
+}
