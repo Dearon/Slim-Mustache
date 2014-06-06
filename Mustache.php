@@ -95,8 +95,13 @@ class Mustache extends \Slim\View
 
             $parserOptions = array(
                 'loader' => new \Mustache_Loader_FilesystemLoader($this->getTemplatesDirectory()),
-                'partials_loader' => new \Mustache_Loader_FilesystemLoader($this->getTemplatesDirectory().'/partials'),
             );
+
+            // Check if the partials directory exists, otherwise Mustache will throw a exception
+            if (is_dir($this->getTemplatesDirectory().'/partials')) {
+                $parserOptions['partials_loader'] = new \Mustache_Loader_FilesystemLoader($this->getTemplatesDirectory().'/partials');
+            }
+
             $parserOptions = array_merge((array)$parserOptions, (array)$this->parserOptions);
 
             $this->parserInstance = new \Mustache_Engine($parserOptions);
